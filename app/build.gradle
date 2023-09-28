@@ -1,0 +1,72 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.osm'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.osm"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildToolsVersion '34.0.0'
+
+
+}
+
+
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation 'org.osmdroid:osmdroid-android:6.1.6'
+    implementation 'org.osmdroid:osmdroid-geopackage:6.1.6'
+//    implementation 'org.geotools:gt-shapefile:23.5'
+
+//    implementation 'org.osmdroid:osmdroid-geopackage-core:6.1.6'
+
+
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    implementation fileTree(dir: 'libs/geotools', include: ['*.jar'])
+
+    implementation 'org.locationtech.jts:jts-core:1.18.0'
+
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.12.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.3'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.12.3'
+//    implementation 'com.github.gplibs:geojson-jackson:1.13.0'
+
+    //تبدیل مختصات جغرافیایی به UTM
+    implementation 'org.locationtech.proj4j:proj4j:1.2.2'
+
+}
+

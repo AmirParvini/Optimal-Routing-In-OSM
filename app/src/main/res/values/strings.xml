@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">OSM</string>
+    <string name="mapView">MapView</string>
+</resources>
